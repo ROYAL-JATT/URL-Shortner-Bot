@@ -9,7 +9,7 @@ from pyshorteners import Shortener
 BITLY_API = os.environ.get("BITLY_API", None)
 CUTTLY_API = os.environ.get("CUTTLY_API", None)
 SHORTCM_API = os.environ.get("SHORTCM_API", None)
-GPLINKS_API = os.environ.get("GPLINKS_API", None)
+GPLINKS_API = os.environ.get("LINCOPRO_API", None)
 POST_API = os.environ.get("POST_API", None)
 OWLY_API = os.environ.get("OWLY_API", None)
 
@@ -65,15 +65,15 @@ async def short(chat_id, link):
     shorten_urls = "**--Shorted URLs--**\n"
     
     # GPLinks shorten
-    if GPLINKS_API and await db.allow_domain(chat_id, "gplinks.in"):
+    if GPLINKS_API and await db.allow_domain(chat_id, "lincopro.in"):
         try:
-            api_url = "https://gplinks.in/api"
-            params = {'api': GPLINKS_API, 'url': link}
+            api_url = "https://lincopro.in/member/tools/api"
+            params = {'api': LINCOPRO_API, 'url': link}
             async with aiohttp.ClientSession() as session:
                 async with session.get(api_url, params=params, raise_for_status=True) as response:
                     data = await response.json()
                     url = data["shortenedUrl"]
-                    shorten_urls += f"\n**GPLinks.in :-** {url}"
+                    shorten_urls += f"\n**lincopro.in :-** {url}"
         except Exception as error:
             print(f"GPLink error :- {error}")
     
