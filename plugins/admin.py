@@ -32,7 +32,7 @@ class Database:
         return {
             "id": id,
             "domains": {
-                "gplinks.in": True,
+                "lincopro.in": True,
                 "bit.ly": True,
                 "chilp.it": True,
                 "click.ru": True,
