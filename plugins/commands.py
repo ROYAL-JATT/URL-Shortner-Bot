@@ -168,10 +168,10 @@ async def display_settings(bot, update, db, cb=False):
     text = SETTINGS_TEXT
     buttons = []
     
-    if await db.allow_domain(chat_id, domain="gplinks.in"):
-        buttons.append([InlineKeyboardButton(text="Gplinks.in ✅", callback_data="set+gplinks.in")])
+    if await db.allow_domain(chat_id, domain="lincopro.in"):
+        buttons.append([InlineKeyboardButton(text="lincopro.in ✅", callback_data="set+lincopro.in")])
     else:
-        buttons.append([InlineKeyboardButton(text="Gplinks.in ❌", callback_data="set+gplinks.in")])
+        buttons.append([InlineKeyboardButton(text="lincopro.in ❌", callback_data="set+lincopro.in")])
     
     if await db.allow_domain(chat_id, domain="bit.ly"):
         buttons.append([InlineKeyboardButton(text="Bit.ly ✅", callback_data="set+bit.ly")])
