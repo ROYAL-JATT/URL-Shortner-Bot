@@ -14,8 +14,6 @@ Bot = Client(
     "URL-Shortner-Bot",
     bot_token=bot_token,
     # Obtain the API ID from environment variables
-api_id_str = os.environ.get("API_ID")
-if api_id_str and api_id_str.isdigit():
     api_id=api_id_str,
     api_hash=api_hash,
     plugins=plugins,
