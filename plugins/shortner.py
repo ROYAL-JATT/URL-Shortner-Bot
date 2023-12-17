@@ -75,7 +75,7 @@ async def short(chat_id, link):
                     url = data["shortenedUrl"]
                     shorten_urls += f"\n**lincopro.in :-** {url}"
         except Exception as error:
-            print(f"GPLink error :- {error}")
+            print(f"lincopro error :- {error}")
     
     # Bit.ly shorten
     if BITLY_API and await db.allow_domain(chat_id, "bit.ly"):
